@@ -62,10 +62,9 @@ h3 { font-size: 1.25rem; margin-bottom: .35rem; }
   border-bottom: 1px solid var(--grey-100);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.brand { display: flex; flex-direction: column; line-height: 1; font-family: var(--font-display); color: var(--black); }
-.brand-small { font-size: .8rem; margin-left: 2px; }
-.brand-name { font-size: 1.7rem; letter-spacing: .14em; }
-.brand-light { color: var(--white); }
+.brand { display: block; }
+.brand img { height: 52px; width: auto; }
+.footer-logo { height: 64px; width: auto; filter: invert(1); }
 .site-nav { display: flex; align-items: center; gap: 2rem; }
 .site-nav a:not(.btn) { font-size: .92rem; font-weight: 500; color: var(--grey-900); position: relative; }
 .site-nav a:not(.btn)::after {
@@ -82,9 +81,7 @@ h3 { font-size: 1.25rem; margin-bottom: .35rem; }
   background: linear-gradient(180deg, var(--white) 0%, var(--grey-100) 100%);
 }
 .hero-logo {
-  width: 100%; max-width: 860px; height: auto; margin: 0 auto 48px;
-  border-radius: var(--radius);
-  box-shadow: 0 24px 60px -24px rgba(0,0,0,.35);
+  width: 100%; max-width: 760px; height: auto; margin: 0 auto 40px;
 }
 .hero h1 { margin-bottom: 1rem; }
 .lead { font-size: 1.1rem; color: var(--grey-600); max-width: 560px; margin: 0 auto 2.25rem; }
