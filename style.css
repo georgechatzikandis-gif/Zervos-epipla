@@ -219,7 +219,7 @@ h3 { font-size: 1.25rem; margin-bottom: .35rem; }
 /* ---------- Catalog page ---------- */
 .card-link { display: block; color: inherit; }
 .page-head { padding: 72px 0 80px; }
-.page-head .lead { margin: .75rem 0 0; max-width: 560px; }
+.page-head .lead { margin: .75rem 0 0; max-width: 680px; }
 .page-head h1 { text-wrap: balance; }
 .back-link {
   display: inline-block; margin-bottom: 28px; font-size: .88rem; font-weight: 600;
