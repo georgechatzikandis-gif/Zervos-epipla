@@ -14,6 +14,13 @@ document.querySelectorAll('.carousel').forEach(carousel => {
     index = Math.round(track.scrollLeft / track.clientWidth);
     cur.textContent = index + 1;
     thumbs.forEach((t, i) => t.classList.toggle('active', i === index));
+    const strip = thumbs[index]?.parentElement;
+    if (strip && strip.scrollWidth > strip.clientWidth) {
+      const t = thumbs[index];
+      if (t.offsetLeft < strip.scrollLeft || t.offsetLeft + t.offsetWidth > strip.scrollLeft + strip.clientWidth) {
+        strip.scrollTo({ left: t.offsetLeft - 8, behavior: 'smooth' });
+      }
+    }
   };
 
   carousel.querySelector('.prev').addEventListener('click', () => goTo(index - 1));

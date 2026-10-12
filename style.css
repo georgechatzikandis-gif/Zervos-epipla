@@ -280,7 +280,12 @@ a.product-img { display: block; }
   background: rgba(17,17,17,.75); color: var(--white); font-size: .8rem; font-weight: 600;
   padding: 4px 10px; border-radius: 999px; font-variant-numeric: tabular-nums;
 }
-.carousel-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 12px; }
+.carousel-thumbs {
+  position: relative; display: flex; gap: 12px; margin-top: 12px; overflow-x: auto; scrollbar-width: thin;
+  scroll-snap-type: x proximity; padding-bottom: 4px;
+}
+.carousel-thumb { flex: 0 0 calc((100% - 3 * 12px) / 4); scroll-snap-align: start; }
+.product-intro .lead-dark + .lead-dark { margin-top: .8rem; }
 .carousel-thumb {
   padding: 0; border: 2px solid transparent; border-radius: var(--radius); overflow: hidden;
   background: #f1efee; cursor: pointer; aspect-ratio: 4 / 3; opacity: .6; transition: opacity .2s, border-color .2s;
@@ -295,6 +300,7 @@ a.product-img { display: block; }
   .carousel-btn.prev { left: 8px; }
   .carousel-btn.next { right: 8px; }
   .carousel-thumbs { gap: 8px; }
+  .carousel-thumb { flex-basis: calc((100% - 3 * 8px) / 4.4); }
   .product-actions .btn { flex: 1 1 100%; }
 }
 @media (prefers-reduced-motion: reduce) { .carousel-track { scroll-behavior: auto; } }
