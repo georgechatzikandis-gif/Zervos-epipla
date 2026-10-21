@@ -310,3 +310,4 @@ a.product-img { display: block; }
 .specs dt { font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--grey-600); margin-bottom: .2rem; }
 .specs dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
 .specs dd span { display: inline-block; min-width: 9.5em; color: var(--grey-600); }
+.specs-note { margin-top: 1rem; max-width: 640px; font-size: .95rem; color: var(--grey-600); }
