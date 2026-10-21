@@ -311,3 +311,37 @@ a.product-img { display: block; }
 .specs dd { margin: 0; color: var(--ink); font-variant-numeric: tabular-nums; }
 .specs dd span { display: inline-block; min-width: 9.5em; color: var(--grey-600); }
 .specs-note { margin-top: 1rem; max-width: 640px; font-size: .95rem; color: var(--grey-600); }
+
+/* ---------- Opening hours ---------- */
+:root { --open: #1f7a3a; --open-bg: #e6f4ea; --closed: #b3261e; --closed-bg: #fce8e6; }
+.hours-status {
+  display: inline-flex; align-items: center; gap: .6rem; margin-top: 1.2rem;
+  padding: .6rem 1.1rem; border-radius: 999px; font-weight: 600; font-size: .95rem;
+  background: var(--white); color: var(--grey-900); border: 1px solid var(--grey-300);
+}
+.hours-status .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--grey-300); flex-shrink: 0; }
+.hours-status.is-open { background: var(--open-bg); color: var(--open); border-color: var(--open); }
+.hours-status.is-open .dot { background: var(--open); box-shadow: 0 0 0 0 rgba(31,122,58,.5); animation: pulse 2s infinite; }
+.hours-status.is-closed { background: var(--closed-bg); color: var(--closed); border-color: var(--closed); }
+.hours-status.is-closed .dot { background: var(--closed); }
+@keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(31,122,58,0); } 100% { box-shadow: 0 0 0 0 rgba(31,122,58,0); } }
+@media (prefers-reduced-motion: reduce) { .hours-status.is-open .dot { animation: none; } }
+.hours-card { background: var(--white); border-radius: var(--radius); padding: 8px 28px; }
+.hours-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.hours-table th, .hours-table td { padding: 14px 6px; text-align: left; border-bottom: 1px solid var(--grey-100); }
+.hours-table tr:last-child th, .hours-table tr:last-child td { border-bottom: 0; }
+.hours-table th { font-weight: 600; color: var(--black); width: 34%; }
+.hours-table td { color: var(--grey-900); }
+.hours-table .closed-day { color: var(--closed); font-weight: 600; }
+.hours-table tr.today th { position: relative; }
+.hours-table tr.today th::after { content: "Σήμερα"; margin-left: .6rem; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; vertical-align: middle; }
+.hours-table tr.today-open { background: var(--open-bg); }
+.hours-table tr.today-open th::after { background: var(--open); color: var(--white); }
+.hours-table tr.today-closed { background: var(--closed-bg); }
+.hours-table tr.today-closed th::after { background: var(--closed); color: var(--white); }
+@media (max-width: 720px) {
+  .hours-card { padding: 4px 12px; }
+  .hours-table th, .hours-table td { padding: 12px 4px; font-size: .92rem; }
+  .hours-table th { width: auto; }
+  .hours-table tr.today th::after { display: block; width: max-content; margin: 4px 0 0; }
+}
