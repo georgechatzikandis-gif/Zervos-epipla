@@ -345,3 +345,5 @@ a.product-img { display: block; }
   .hours-table th { width: auto; }
   .hours-table tr.today th::after { display: block; width: max-content; margin: 4px 0 0; }
 }
+.carousel.single .carousel-btn, .carousel.single .carousel-count { display: none; }
+.carousel-thumbs[hidden] { display: none; }
