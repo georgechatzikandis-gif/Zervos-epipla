@@ -349,3 +349,4 @@ a.product-img { display: block; }
 .carousel-thumbs[hidden] { display: none; }
 .carousel.single .carousel-track { aspect-ratio: auto; }
 .carousel.single .carousel-slide img { height: auto; }
+.starts-tonos { padding-left: .14em; }
