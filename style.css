@@ -350,3 +350,11 @@ a.product-img { display: block; }
 .carousel.single .carousel-track { aspect-ratio: auto; }
 .carousel.single .carousel-slide img { height: auto; }
 .starts-tonos { padding-left: .14em; }
+
+/* ---------- Catalog groups (e.g. dining: tables / sideboards / chairs) ---------- */
+.catalog-group {
+  font-size: clamp(1.4rem, 3vw, 1.9rem); margin: 0 0 28px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--grey-300);
+}
+.product-grid.catalog + .catalog-group { margin-top: 72px; }
+@media (max-width: 720px) { .product-grid.catalog + .catalog-group { margin-top: 48px; } }
