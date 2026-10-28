@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta property="og:image" content="images/logo.png">
-  <link rel="stylesheet" href="style.css?v=20261027">
+  <link rel="stylesheet" href="style.css?v=20261028">
 </head>
 <body>
 
@@ -35,7 +35,11 @@
   <main id="top">
 
     <!-- ===== Hero ===== -->
-    <section class="hero bg-photo" style="--photo: url('images/bg-1.jpg'); --pos: center 62%;">
+    <section class="hero bg-photo hero-video-wrap">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="video/showroom-poster.jpg" aria-hidden="true">
+        <source src="video/showroom-mobile.mp4" type="video/mp4" media="(max-width: 720px)">
+        <source src="video/showroom.mp4" type="video/mp4">
+      </video>
       <div class="container">
         <img class="hero-logo" src="images/logo-white.png" alt="Λογότυπο ΖΕΡΒΟΣ Έπιπλα - Since 1966" width="1055" height="360">
         <h1>Έπιπλα με χαρακτήρα,<br>για κάθε χώρο του σπιτιού.</h1>
@@ -255,6 +259,6 @@
     <a href="#offer" class="accent">Προσφορά</a>
   </div>
 
-  <script src="script.js?v=20261027"></script>
+  <script src="script.js?v=20261028"></script>
 </body>
 </html>
