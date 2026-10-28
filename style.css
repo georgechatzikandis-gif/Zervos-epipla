@@ -358,3 +358,4 @@ a.product-img { display: block; }
 }
 .product-grid.catalog + .catalog-group { margin-top: 72px; }
 @media (max-width: 720px) { .product-grid.catalog + .catalog-group { margin-top: 48px; } }
+.specs dd span { padding-right: .8em; }
