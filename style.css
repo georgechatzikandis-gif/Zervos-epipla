@@ -156,6 +156,14 @@ h3 { font-size: 1.25rem; margin-bottom: .35rem; }
 /* ---------- Footer ---------- */
 .site-footer { background: var(--black); color: #9a9a9a; padding: 40px 0; font-size: .85rem; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.ig-link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: #fff; color: var(--black); transition: transform .2s, background .2s, color .2s; }
+.ig-link svg { width: 20px; height: 20px; fill: currentColor; }
+.ig-link:hover { transform: translateY(-2px); background: #c9ab72; color: var(--black); }
+.ig-follow { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 48px; }
+.ig-follow p { margin: 0; line-height: 1.5; }
+.ig-follow p a { font-weight: 600; color: var(--black); }
+.ig-link-lg { width: 56px; height: 56px; background: var(--black); color: #fff; }
+.ig-link-lg svg { width: 26px; height: 26px; }
 
 /* ---------- Photo backgrounds ---------- */
 .bg-photo {
