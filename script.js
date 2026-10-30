@@ -14,8 +14,7 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // Offer form -> opens an email with the request details
-// (αλλάξτε το email παρακάτω με το πραγματικό email του καταστήματος)
-const OFFER_EMAIL = 'info@zervos-epipla.gr';
+const OFFER_EMAIL = 'zervosinhouse@gmail.com';
 const offerForm = document.getElementById('offerForm');
 
 // Prefill the offer form from links like index.html?cat=...&product=...#offer
