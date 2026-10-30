@@ -54,6 +54,13 @@ h3 { font-size: 1.25rem; margin-bottom: .35rem; }
 .btn-outline:hover { background: var(--black); color: var(--white); }
 .btn-grey { background: var(--grey-300); color: var(--black); }
 .btn-grey:hover { background: #bdbdbd; }
+.btn-review { background: #c9ab72; color: var(--black); border-color: #c9ab72; }
+.btn-review:hover { background: #b8985c; border-color: #b8985c; }
+.about-review { margin-top: 1.5rem; }
+.review-cta { margin: 48px auto 0; max-width: 560px; text-align: center; padding: 36px 24px; border: 1px solid var(--grey-300); border-radius: var(--radius); }
+.review-cta .stars { color: #c9ab72; font-size: 1.4rem; letter-spacing: .2em; margin-bottom: .5rem; }
+.review-cta h3 { margin-bottom: .4rem; }
+.review-cta .btn { margin-top: 1.25rem; }
 
 /* ---------- Header ---------- */
 .site-header {
