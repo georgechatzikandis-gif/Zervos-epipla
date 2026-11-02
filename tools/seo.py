@@ -131,5 +131,5 @@ title=f'{BRAND} Ρόδος | Κατάστημα επίπλων Κρεμαστή 
 desc='ΖΕΡΒΟΣ Έπιπλα από το 1966 στην Κρεμαστή Ρόδου: σαλόνια, κρεβατοκάμαρες, τραπεζαρίες, συνθέσεις τοίχου, παιδικά και διακόσμηση. Furniture store in Rhodes since 1966. We speak English.'
 kw=KW_COMMON+', σαλόνια Ρόδος, καναπέδες Ρόδος, κρεβατοκάμαρες Ρόδος, τραπεζαρίες Ρόδος, τραπεζάκια σαλονιού, συνθέσεις τοίχου, παιδικά δωμάτια, καθρέπτες, furniture near Rhodes airport, English speaking furniture store Rhodes, sofas Rhodes, bedroom furniture Rhodes, dining tables Rhodes, wall units Rhodes, kids furniture Rhodes'
 _old='έπιπλα Ρόδος, κατάστημα επίπλων Ρόδος, έπιπλα Κρεμαστή, σαλόνια Ρόδος, καναπέδες Ρόδος, κρεβατοκάμαρες Ρόδος, τραπεζαρίες Ρόδος, συνθέσεις τοίχου, παιδικά δωμάτια, ΖΕΡΒΟΣ έπιπλα, Zervos furniture, furniture store Rhodes, furniture Rhodes Greece, sofas Rhodes, bedroom furniture Rhodes, Kremasti'
-apply('index.html',head_block(title,desc,BASE,BASE+'video/showroom-poster.jpg',kw,'website',[store,site]))
+apply('index.html',head_block(title,desc,BASE,BASE+'images/og-logo.jpg',kw,'website',[store,site]))
 print('ok',len(prod_cat))

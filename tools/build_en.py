@@ -150,7 +150,7 @@ for f in files:
     store['hasOfferCatalog']={'@type':'OfferCatalog','name':'Furniture','itemListElement':[{'@type':'OfferCatalog','name':v[1],'url':url_en(k)} for k,v in CATS_EN.items()]}
     store['knowsLanguage']=['el','en']
     site={'@context':'https://schema.org','@type':'WebSite','@id':BASE+'en/#website','url':BASE+'en/','name':BRAND_EN,'inLanguage':'en','publisher':{'@id':BASE+'#store'}}
-    block=seo_en(title,desc,url_en(slug),BASE+'video/showroom-poster.jpg',kw,'website',[store,site])
+    block=seo_en(title,desc,url_en(slug),BASE+'images/og-logo.jpg',kw,'website',[store,site])
   elif slug in CATS_EN:
     short,long_=CATS_EN[slug]
     lead=text(re.search(r'<p class="lead">(.*?)</p>',body,re.S).group(1))
