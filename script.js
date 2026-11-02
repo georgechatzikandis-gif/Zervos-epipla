@@ -1,3 +1,5 @@
+const EN = document.documentElement.lang === 'en';
+
 // Mobile menu
 const toggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.site-nav');
@@ -26,19 +28,22 @@ if (offerForm) {
     const opt = [...offerForm.category.options].find(o => o.value === cat);
     if (opt) offerForm.category.value = cat;
   }
-  if (product) offerForm.message.value = `Ενδιαφέρομαι για: ${product}`;
+  if (product) offerForm.message.value = (EN ? 'I am interested in: ' : 'Ενδιαφέρομαι για: ') + product;
 }
 
 offerForm?.addEventListener('submit', e => {
   e.preventDefault();
   const f = new FormData(e.target);
+  const L = EN
+    ? { name: 'Name', phone: 'Phone', cat: 'Category', subject: 'Quote request' }
+    : { name: 'Ονοματεπώνυμο', phone: 'Τηλέφωνο', cat: 'Κατηγορία', subject: 'Αίτημα προσφοράς' };
   const body =
-    `Ονοματεπώνυμο: ${f.get('name')}\n` +
-    `Τηλέφωνο: ${f.get('phone')}\n` +
+    `${L.name}: ${f.get('name')}\n` +
+    `${L.phone}: ${f.get('phone')}\n` +
     `Email: ${f.get('email')}\n` +
-    `Κατηγορία: ${f.get('category')}\n\n` +
+    `${L.cat}: ${f.get('category')}\n\n` +
     `${f.get('message')}`;
-  const subject = `Αίτημα προσφοράς - ${f.get('category')}`;
+  const subject = `${L.subject} - ${f.get('category')}`;
   window.location.href =
     `mailto:${OFFER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
@@ -51,7 +56,9 @@ if (hoursStatus) {
   const evening = [17 * 60, 20 * 60 + 30];
   const HOURS = { 0: [], 1: [morning, evening], 2: [morning, evening], 3: [morning, evening],
                   4: [morning, evening], 5: [morning, evening], 6: [morning] };
-  const ON_DAY = ['την Κυριακή', 'τη Δευτέρα', 'την Τρίτη', 'την Τετάρτη', 'την Πέμπτη', 'την Παρασκευή', 'το Σάββατο'];
+  const ON_DAY = EN
+    ? ['on Sunday', 'on Monday', 'on Tuesday', 'on Wednesday', 'on Thursday', 'on Friday', 'on Saturday']
+    : ['την Κυριακή', 'τη Δευτέρα', 'την Τρίτη', 'την Τετάρτη', 'την Πέμπτη', 'την Παρασκευή', 'το Σάββατο'];
   const WEEKDAYS = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
   const fmt = m => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
   const textEl = hoursStatus.querySelector('.hours-status-text');
@@ -68,6 +75,10 @@ if (hoursStatus) {
       const d = (day + offset) % 7;
       const slot = HOURS[d].find(([start]) => offset > 0 || start > minutes);
       if (slot) {
+        if (EN) {
+          const when = offset === 0 ? 'today' : offset === 1 ? 'tomorrow' : ON_DAY[d];
+          return `opens ${when} at ${fmt(slot[0])}`;
+        }
         const when = offset === 0 ? 'σήμερα' : offset === 1 ? 'αύριο' : ON_DAY[d];
         return `ανοίγει ${when} στις ${fmt(slot[0])}`;
       }
@@ -81,8 +92,8 @@ if (hoursStatus) {
     hoursStatus.classList.toggle('is-open', Boolean(current));
     hoursStatus.classList.toggle('is-closed', !current);
     textEl.textContent = current
-      ? `Ανοιχτά τώρα · κλείνει στις ${fmt(current[1])}`
-      : `Κλειστά τώρα · ${nextOpening(day, minutes)}`;
+      ? (EN ? `Open now · closes at ${fmt(current[1])}` : `Ανοιχτά τώρα · κλείνει στις ${fmt(current[1])}`)
+      : (EN ? `Closed now · ${nextOpening(day, minutes)}` : `Κλειστά τώρα · ${nextOpening(day, minutes)}`);
     document.querySelectorAll('.hours-table tr').forEach(tr => {
       const isToday = Number(tr.dataset.day) === day;
       tr.classList.toggle('today', isToday);
