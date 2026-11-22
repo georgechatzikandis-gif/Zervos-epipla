@@ -86,8 +86,8 @@ for f in sorted(glob.glob('*.html')):
   desc=clip(lead,150)+f' {BRAND}, Κρεμαστή Ρόδου. {en} – Zervos Furniture, Rhodes.'
   name_only=h1.split()[-1]
   kw=f'{h1}, {name_only}, {ptype.lower()} {name_only}, {ptype.lower()} Ρόδος, {en.lower()} {name_only}, {en.lower()} Rhodes, '+', '.join(CAT_KW[cat].split(', ')[:8])+', '+KW_COMMON
-  prod={'@context':'https://schema.org','@type':'Product','name':h1,'description':lead,'image':imgs,
-        'url':url(slug),'category':f'{ptype} / {en}'}
+  prod={'@context':'https://schema.org','@type':'WebPage','name':h1,'description':lead,'image':imgs,
+        'url':url(slug)}
   bc=crumbs([('Αρχική',BASE),(gr_cat,url(cat)),(h1,url(slug))])
   apply(f,head_block(title,desc,url(slug),imgs[0],kw,'product',[prod,bc]))
   prod_cat[slug]=cat

@@ -175,7 +175,7 @@ for f in files:
     title=f'{h1} | {en_type} Rhodes | {BRAND_EN}'
     desc=clip(lead,150)+f' {BRAND_EN}, Kremasti, Rhodes.'
     kw=f'{h1}, {name}, {en_type.lower()} {name}, {en_type.lower()} Rhodes, '+CAT_KW_EN[cat]+', '+KW_EN
-    prod={'@context':'https://schema.org','@type':'Product','name':h1,'description':lead,'image':imgs,'url':url_en(slug),'category':en_type}
+    prod={'@context':'https://schema.org','@type':'WebPage','name':h1,'description':lead,'image':imgs,'url':url_en(slug)}
     block=seo_en(title,desc,url_en(slug),imgs[0],kw,'product',[prod,crumbs([('Home',BASE+'en/'),(CATS_EN[cat][1],url_en(cat)),(h1,url_en(slug))])])
   head=re.sub(r'  <!-- SEO -->.*?<!-- /SEO -->\n',lambda m: block+hreflang(slug),head,flags=re.S)
   open('en/'+f,'w').write(head+body)
